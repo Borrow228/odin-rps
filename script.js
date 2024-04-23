@@ -1,5 +1,6 @@
 let randomNumber;
 let computerChoice;
+let humanChoice;
 
 function getRandomNumber() {
     randomNumber = Math.floor(Math.random() * 100) + 1;
@@ -17,5 +18,15 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+function getHumanChoice() {
+    // first prompt, if wrong, repeat until right
+    humanChoice = prompt("Choose one: Rock, Paper, Scissors?");
+    humanChoice = humanChoice.toLowerCase();
+    
+    while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
+    humanChoice = prompt("Choose one: Rock, Paper, Scissors? If you see this window twice, you typed wrong!");
+    humanChoice = humanChoice.toLowerCase(); }
+    }
+
 getComputerChoice();
-console.log (computerChoice)
+getHumanChoice();
